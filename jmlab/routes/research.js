@@ -8,10 +8,7 @@ router.get('/GetPubs', function(req, res, next) {
         if (err) {
             return res.json({ status: false });
         };
-        var arrPubs = data.toString().split("\n");
-        for (i in arrPubs) {
-            console.log(arrPubs[i]);
-        }
+        var arrPubs = data.toString().split("\n");        
         return res.json({ status: true, pubs: arrPubs });
     });
 
