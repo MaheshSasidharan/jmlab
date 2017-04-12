@@ -1,0 +1,15 @@
+{
+  "name": "angularmetro",
+  "version": "1.0.0",
+  "description": "JL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mahesh Sasidharan",
+  "license": "ISC",
+  "dependencies": {
+    "angular-qrcode": "^7.2.0",
+    "jquery": "^3.2.1"
+  }
+}

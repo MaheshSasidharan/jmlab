@@ -1,0 +1,120 @@
+/** Override Bootstrap **/
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+hr {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+/** Pub Med Animation**/
+
+.animationDurationWrapper {
+    transition-duration: 2s !important;
+    -moz-transition-duration: 2s !important;
+    -webkit-transition-duration: 2s !important;
+}
+
+.animationLeaveNone.ng-leave {
+    transition-duration: 0s !important;
+    -webkit-transition-duration: 0s !important;
+}
+
+
+/** Pub Med **/
+
+.PubMedTop {
+    background-color: #019092;
+    font-family: 'Francois One', sans-serif;
+}
+
+.PubMedTag {
+    background-color: #019092;
+    color: white;
+    text-align: center;
+    border-radius: 3px;
+    font-size: 2.5vw;
+}
+
+.PubMedTag:not(last-child) {
+    margin-bottom: 8px;
+}
+
+.PubMedAuthor {
+    display: inline-block;
+    font-size: 2vw;
+}
+
+.PubMedAuthors {
+    color: white;
+}
+
+.PubMedTitle {
+    color: white;
+    font-weight: bold;
+    font-size: 3vw;
+}
+
+.PubMedJournal {
+    color: white;
+    text-align: right;
+    padding-right: 18px;
+    font-size: 3vw;
+}
+
+.PubMedAbstract {
+    font-size: 2vw;
+    font-family: 'Tinos', serif;
+    height: 30pc;
+}
+
+.PubMedQR {
+    width: 100%;
+    height: 250px;
+    margin-bottom: 40px;
+}
+
+.PubMedQRnTags {
+    text-align: center;
+}
+
+.PubMedQRnTags,
+.PubMedAbstract {
+    padding: 25px;
+}
+
+.PubMedAuthor:not(:last-child)::after {
+    content: "; ";
+    white-space: pre;
+    color: #d8c9c9;
+}
+
+
+/*****/
+
+.LineSeparator {
+    width: 98%;
+    margin: 0 auto;
+}
+
+.JournalOuter {
+    display: table;
+    height: 100px;
+    width: 100%;
+}
+
+.JournalMiddle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.JournalInner {
+    margin-left: auto;
+    margin-right: auto;
+    width: /*whatever width you want*/
+    ;
+}

@@ -1,0 +1,33 @@
+{
+  "name": "jmlabs",
+  "version": "1.0.0",
+  "description": "All interesting researches going on",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaheshSasidharan/jmlab.git"
+  },
+  "author": "Mahesh Sasidharan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaheshSasidharan/jmlabs/issues"
+  },
+  "homepage": "https://github.com/MaheshSasidharan/jmlabs#readme",
+  "dependencies": {
+    "body-parser": "~1.15.1",
+    "client-sessions": "^0.7.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "express": "^4.13.4",
+    "forever": "^0.15.3",
+    "forever-monitor": "^1.7.1",
+    "glob": "^7.1.1",
+    "https": "^1.0.0",
+    "jade": "~1.11.0",
+    "morgan": "~1.7.0",
+    "serve-favicon": "~2.3.0"
+  }
+}
