@@ -67,10 +67,14 @@ hr {
 }
 
 .PubMedAbstract {
-    font-size: 2vw;
+    font-size: 24px;
     font-family: 'Tinos', serif;
-    height: 30pc;
+    height: 52pc;
 }
+
+/*.PubMedAbstractCustomWH {
+    height: 650px;
+}*/
 
 .PubMedQR {
     width: 100%;
@@ -85,6 +89,7 @@ hr {
 .PubMedQRnTags,
 .PubMedAbstract {
     padding: 25px;
+    text-align: justify;
 }
 
 .PubMedAuthor:not(:last-child)::after {

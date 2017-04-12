@@ -2,13 +2,17 @@ JM.factory('Factory_DataService', ['$http', DataService])
 
 function DataService($http) {
     var Helper = {
-        Miscellaneous: {
-            GetBarCode2: function(data) {
-                return $http.get('https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=' + data)
+        app: "https://128.255.84.48:3000/",
+        Research: {
+            controller: "research/",
+            GetPubs: function() {
+                return $http.get(Helper.app + Helper.Research.controller + 'GetPubs')
                     .then(
                         Helper.Miscellaneous.ReturnDataDotData,
                         Helper.Miscellaneous.FailedInService)
-            },
+            }
+        },
+        Miscellaneous: {
             GetBarCode: function(data) {
                 return $http({
                     method: 'JSONP',
@@ -43,6 +47,7 @@ function DataService($http) {
     }
 
     var oService = {
+        GetPubs: Helper.Research.GetPubs,
         GetBarCode: Helper.Miscellaneous.GetBarCode
     }
     return oService;

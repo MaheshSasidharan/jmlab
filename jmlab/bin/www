@@ -1,25 +1,9 @@
-#!/usr/bin/env node
-
-/**
- * Module dependencies.
- */
-
 var app = require('../app');
-//var path = require('path');
-///var debug = require('debug')('jmlab:server');
 
-/*
-* Create HTTP server.
-*/
-/*
-var http = require('http');
-var server = http.createServer(app);
-*/
 /* #HttpsServer */
 var https = require('https');
 var fs = require("fs");
 
-//var key = fs.readFileSync(path.resolve('../CommonFactory/certificates/https/key.pem'));
 var key = fs.readFileSync('../CommonFactory/certificates/https/key.pem');
 var cert = fs.readFileSync('../CommonFactory/certificates/https/cert.pem')
 var https_options = {

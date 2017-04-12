@@ -9,8 +9,6 @@ var sessions = require("client-sessions");
 var routes = require('./routes/index');
 var jsResearch = require('./routes/research');
 
-var constants = require('./CommonFactory/constants');
-
 var app = express();
 //app.enable('trust proxy');
 /* #PublicFolder */
