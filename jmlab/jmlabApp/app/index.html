@@ -11,11 +11,11 @@
     <!-- SCROLLS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/library/ng-animation.css">    
     <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="css/library/ng-animation.css">
+    <link rel="stylesheet" href="css/library/timer.css">
     <!-- <link rel="stylesheet" href="css/style.css"> -->
     <link rel="stylesheet" href="http://cdn.jsdelivr.net/animatecss/2.1.0/animate.min.css">
-
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Francois+One|Tinos" rel="stylesheet">
     <!-- Resizable font -->
@@ -34,10 +34,10 @@
     <script src="node_modules/angular-qrcode/angular-qrcode.js"></script>
 </head>
 
-<body ng-controller="mainController as ma">
+<body ng-controller="mainController as ma" ng-class="ma.sThemeClass">
     <div class="container-fluid">
-    <button ng-show="false" class="btn btn-md btn-danger" ng-click="ma.Helper.Next()">NEXT</button>
-        <div class="PubMedWrapper scale-fade animationDurationWrapper animationLeaveNone" ng-if="ma.oContent">
+        <button ng-show="false" class="btn btn-md btn-danger" ng-click="ma.Helper.ToggleTheme()">NEXT</button>
+        <div class="PubMedWrapper toggle animationDurationWrapper animationLeaveNone" ng-if="ma.oContent">
             <!-- TEST 1 -
             <input type="text" ng-model="test" ng-keyup="ma.Helper.Resize()" /> TEST 2 -
             <input type="text" ng-model="test2" ng-keyup="ma.Helper.Resize()" /> -->
@@ -72,7 +72,7 @@
             </div>
             <div class="PubMedBottom row">
                 <div class="PubMedDetail row">
-                    <div class="PubMedAbstract col-md-10 autoResize PubMedAbstractCustomWH">
+                    <div class="PubMedAbstract col-md-10 autoResize">
                         <span>{{ma.oContent.abstract}}</span>
                     </div>
                     <div class="PubMedQRnTags col-md-2">
@@ -87,7 +87,14 @@
                     </div>
                 </div>
             </div>
-        </div>        
+        </div>
+    </div>
+    <div class="Timer">
+        <div class="wrapper">
+            <div class="pie spinner"></div>
+            <div class="pie filler"></div>
+            <div class="mask"></div>
+        </div>
     </div>
 </body>
 

@@ -3,6 +3,12 @@ JM.controller('mainController', ['$scope', '$timeout', '$interval', 'Factory_Com
 function MainController($scope, $timeout, $interval, CR, DS) {
     var ma = this;
     ma.oContent = null;
+    ma.sThemeClass = null; //  'nightTheme' || 'dayTheme'
+
+
+
+
+
 
     var startIndex = -1;
     var arrContent = [];
@@ -48,21 +54,23 @@ function MainController($scope, $timeout, $interval, CR, DS) {
                         }
                     }
                     if (arrContent.length) {
-                        ma.Helper.Init();
+                        ma.Helper.InitContent();
                     }
                 } else {
                     alert("Failed to load file");
                 }
             });
         },
-        Init: function() {
+        InitContent: function() {
             startIndex = 0;
             this.PrepareFinalContent(startIndex);
             $interval(function() {
+                ma.Helper.ChangeTheme();
                 ma.Helper.Next();
             }, nSwitchContentDelay);
         },
         Next: function() {
+            //if(startIndex === 1) return;
             if (startIndex === arrContent.length - 1) {
                 startIndex = 0;
             } else {
@@ -75,7 +83,7 @@ function MainController($scope, $timeout, $interval, CR, DS) {
             var that = this;
             $timeout(function() {
                 ma.oContent = arrContent[num];
-                $timeout(ma.Helper.Resize, 100);
+                $timeout(ma.Helper.Resize, 0);
             }, 0);
         },
         Resize: function() {
@@ -83,8 +91,34 @@ function MainController($scope, $timeout, $interval, CR, DS) {
             $('.autoResize').textfill({
                 changeLineHeight: true
             });
+        },
+        ChangeTheme: function() {
+            var today = new Date();
+            var dStartTime = new Date(today.getFullYear(), today.getMonth(), today.getDate(), 6, 0, 0); // 6am
+            var dEndTime = new Date(today.getFullYear(), today.getMonth(), today.getDate(), 18, 0, 0); // 6pm
+
+
+            // if (day) {
+            //     today = new Date(today.getFullYear(), today.getMonth(), today.getDate(), 17, 0, 0); // 6am
+            // } else {
+            //     today = new Date(today.getFullYear(), today.getMonth(), today.getDate(), 19, 0, 0); // 6am
+            // }
+
+            if (today >= dStartTime && today <= dEndTime) {
+                ma.sThemeClass = 'dayTheme';
+            } else {
+                ma.sThemeClass = 'nightTheme';
+            }
+        },
+        ToggleTheme: function() {
+            day = !day;
+            this.ChangeTheme();
+        },
+        Init: function() {
+            ma.Helper.ChangeTheme();
+            ma.Helper.GetPubs();
         }
     }
-
-    ma.Helper.GetPubs();
+    ma.Helper.Init();
+    var day = true;
 }

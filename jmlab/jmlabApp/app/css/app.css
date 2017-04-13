@@ -13,13 +13,19 @@ hr {
 
 /** Pub Med Animation**/
 
-.animationDurationWrapper {
-    transition-duration: 2s !important;
-    -moz-transition-duration: 2s !important;
-    -webkit-transition-duration: 2s !important;
+.PubMedWrapper {
+    /*position: absolute;
+    top: 0;*/
+    position: fixed;
 }
 
-.animationLeaveNone.ng-leave {
+.animationDurationWrapper {
+    transition-duration: 4s !important;
+    -moz-transition-duration: 4s !important;
+    -webkit-transition-duration: 4s !important;
+}
+
+.animationLeaveNone.ng-leave1 {
     transition-duration: 0s !important;
     -webkit-transition-duration: 0s !important;
 }
@@ -27,13 +33,48 @@ hr {
 
 /** Pub Med **/
 
-.PubMedTop {
+
+/*Day*/
+
+.dayTheme .PubMedTop,
+.dayTheme .PubMedTag {
     background-color: #019092;
+}
+
+body.dayTheme,
+.dayTheme .Timer .wrapper {
+    background: #fff;
+}
+
+.dayTheme .PubMedAbstract {
+    color: #000;
+}
+
+
+/*Night*/
+
+.nightTheme .PubMedTop,
+.nightTheme .PubMedTag {
+    background-color: #4c4c4c;
+}
+
+body.nightTheme,
+.nightTheme .Timer .wrapper {
+    background: #333333;
+}
+
+.nightTheme .PubMedAbstract {
+    color: #fff;
+}
+
+
+/*End of Theme*/
+
+.PubMedTop {
     font-family: 'Francois One', sans-serif;
 }
 
 .PubMedTag {
-    background-color: #019092;
     color: white;
     text-align: center;
     border-radius: 3px;
@@ -71,10 +112,6 @@ hr {
     font-family: 'Tinos', serif;
     height: 52pc;
 }
-
-/*.PubMedAbstractCustomWH {
-    height: 650px;
-}*/
 
 .PubMedQR {
     width: 100%;
